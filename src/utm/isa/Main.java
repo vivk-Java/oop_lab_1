@@ -12,6 +12,7 @@ public class Main {
 	}
 
 	public static void printStudents(University u) {
+		System.out.println(u.name + " : " + u.foundationYear);
 		int size = u.getStudents().size();
 		System.out.println("Students : " + (size > 0 ? size + " : " : size));
 		for (Student student: u.getStudents()) {
@@ -43,6 +44,9 @@ public class Main {
 
 		// endregion
 
+		System.out.println("================================================================");
+		System.out.println();
+
 		// region University and student - Part 1
 
 		University u = new University("University", 1999);
@@ -64,9 +68,35 @@ public class Main {
 
 		// endregion
 
+		System.out.println("================================================================");
+		System.out.println();
+
 		// region University and student - Part 2
 
+		University u1 = new University("U1", 1900);
+		University u2 = new University("U2", 1800);
+		University u3 = new University("U3", 1950);
 
+		u1.addStudent("Vasea", 20, 7.77f);
+		u1.addStudent("Lena", 25, 5.55f);
+
+		u2.addStudent("Oleg", 20, 10.00f);
+		u2.addStudent("Maxim", 21, 5.00f);
+
+		u3.addStudent("George", 23, 8.25f);
+		u3.addStudent("Igor", 19, 9.00f);
+
+		printStudents(u1);
+		System.out.println("Average " + u1.name + " : " + u1.calcAverageMark());
+		System.out.println();
+
+		printStudents(u2);
+		System.out.println("Average " + u2.name + " : " + u2.calcAverageMark());
+		System.out.println();
+
+		printStudents(u3);
+		System.out.println("Average " + u3.name + " : " + u3.calcAverageMark());
+		System.out.println();
 
 		// endregion
 
